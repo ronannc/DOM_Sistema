@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/cliente/create'    , 'ClientsController@create')->name('clients.create');
+Route::get('/cliente'           , 'ClientsController@index')->name('clients.index');
+
+Route::resource('clients', 'ClientsController');
+
+Route::get('/fornecedor/create'    , 'ProvidersController@create')->name('providers.create');
+Route::get('/fornecedor'           , 'ProvidersController@index')->name('providers.index');
+
+Route::resource('providers', 'ProvidersController');
