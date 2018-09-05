@@ -7,5 +7,56 @@
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <div class="row">
+
+        <div class="col-lg-4 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>{{$valor_fluxo}}</h3>
+
+                    <p>Fluxo de Caixa Atual</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+                {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
+            </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-4 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>{{$valor_entrada}}</h3>
+
+                    <p>Entrada Mes</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
+            </div>
+        </div>
+
+        <!-- ./col -->
+        <div class="col-lg-4 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>{{$valor_saida}}</h3>
+
+                    <p>Saida Mes</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-person-add"></i>
+                </div>
+                {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
+            </div>
+        </div>
+
+
+
+    </div>
 @stop

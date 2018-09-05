@@ -28,3 +28,8 @@ Route::get('/fornecedor/create'    , 'ProvidersController@create')->name('provid
 Route::get('/fornecedor'           , 'ProvidersController@index')->name('providers.index');
 
 Route::resource('providers', 'ProvidersController');
+
+Route::get('/conta/create'    , 'AccountsController@create')->name('accounts.create');
+Route::get('/conta'           , 'AccountsController@index')->name('accounts.index');
+
+Route::resource('accounts', 'AccountsController');

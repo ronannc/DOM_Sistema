@@ -148,6 +148,23 @@ return [
 			    ],
 		    ],
 	    ],
+	    'FINANCEIRO',
+	    [
+		    'text' => 'Contas',
+		    'icon' => 'money',
+		    'submenu' => [
+			    [
+				    'text' => 'Cadastrar',
+				    'icon' => 'plus',
+				    'url'  => '/conta/create',
+			    ],
+			    [
+				    'text'    => 'Listar',
+				    'icon' => 'list',
+				    'url'  => '/conta',
+			    ],
+		    ],
+	    ],
 
 
         'ORCAMENTO',

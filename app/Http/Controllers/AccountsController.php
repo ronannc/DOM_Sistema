@@ -7,79 +7,104 @@ use Illuminate\Http\Request;
 
 class AccountsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		$accounts = Accounts::all();
+		return view('Accounts.index', compact('accounts'));
+	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Accounts  $accounts
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Accounts $accounts)
-    {
-        //
-    }
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		return view('Accounts.create', ['account' => new Accounts()]);
+	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Accounts  $accounts
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Accounts $accounts)
-    {
-        //
-    }
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(Request $request)
+	{
+		$account = $request->all();
+		Accounts::create($account);
+		return redirect()-> route('accounts.index');
+	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Accounts  $accounts
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Accounts $accounts)
-    {
-        //
-    }
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  \App\Clients $client
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show(Accounts $account)
+	{
+		return view('accounts.show', compact('account'));
+	}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Accounts  $accounts
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Accounts $accounts)
-    {
-        //
-    }
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  \App\Clients  $client
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit($id)
+	{
+
+		$account = Accounts::findOrfail($id);
+		return view('Accounts.edit', compact('account'));
+	}
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @param  \App\Clients  $client
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update( Request $request, $id)
+	{
+		$account = Accounts::findOrfail($id);
+		$data = $request->all();
+		$account->fill($data);
+		$account->save();
+		return redirect()-> route('accounts.index');
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  \App\Clients  $client
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy(Accounts $account)
+	{
+		try {
+			$account->delete();
+		} catch ( \Exception $e ) {
+
+		}
+
+		return redirect()-> route('accounts.index');
+	}
 }

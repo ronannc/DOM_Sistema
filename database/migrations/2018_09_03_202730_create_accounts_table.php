@@ -18,6 +18,10 @@ class CreateAccountsTable extends Migration
             $table->string('nome');
             $table->double('valor');
             $table->char('tipo');
+	        $table->integer('client_id')->unsigned()->nullable();
+	        $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+	        $table->integer('provider_id')->unsigned()->nullable();
+	        $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');
             $table->timestamps();
         });
     }
