@@ -10,6 +10,6 @@ class Accounts extends Model
 	use Notifiable;
 
 	protected $fillable = [
-		'nome', 'valor', 'tipo'
+		'nome', 'valor', 'tipo', 'parcelas', 'parcelado', 'entrada'
 	];
 }

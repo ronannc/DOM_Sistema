@@ -14,4 +14,14 @@
         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
         <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Telefone" value="{{old('name',$client->telefone)}}">
     </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+        <input type="text" id="documento" name="documento" class="form-control" placeholder="Documento" value="{{old('documento',$client->documento)}}">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+        <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereco" value="{{old('endereco',$client->endereco)}}">
+    </div>
 </div>

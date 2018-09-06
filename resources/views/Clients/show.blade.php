@@ -31,10 +31,14 @@
                 <th scope="row">Email</th>
                 <td>{{$client->email}}</td>
             </tr>
-            {{--<tr>--}}
-                {{--<th scope="row">Endereço</th>--}}
-                {{--<td>{{$client->address}}</td>--}}
-            {{--</tr>--}}
+            <tr>
+                <th scope="row">Documento</th>
+                <td>{{$client->documento}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Endereço</th>
+                <td>{{$client->endereco}}</td>
+            </tr>
             </tbody>
         </table>
         <a class="btn btn-primary" href="{{route('clients.edit',['client' => $client->id])}}">Editar</a>

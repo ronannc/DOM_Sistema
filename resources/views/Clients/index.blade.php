@@ -22,7 +22,8 @@
                 <th>Nome</th>
                 <th>E-mail</th>
                 <th>Telefone</th>
-                {{--<th>Endereço</th>--}}
+                <th>Documento</th>
+                <th>Endereço</th>
                 <th>Ação</th>
             </tr>
             </thead>
@@ -33,6 +34,8 @@
                     <td>{{$client->nome}}</td>
                     <td>{{$client->email}}</td>
                     <td>{{$client->telefone}}</td>
+                    <td>{{$client->documento}}</td>
+                    <td>{{$client->endereco}}</td>
                     <td>
                         <a href="{{route('clients.edit',['client' => $client->id])}}">Editar</a>
                     </td>

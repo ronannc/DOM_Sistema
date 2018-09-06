@@ -17,11 +17,14 @@ class CreateAccountsTable extends Migration
             $table->increments('id');
             $table->string('nome');
             $table->double('valor');
-            $table->char('tipo');
+            $table->boolean('tipo');
+	        $table->boolean('parcelado');
+	        $table->boolean('entrada');
+	        $table->integer('parcelas')->nullable();
 	        $table->integer('client_id')->unsigned()->nullable();
-	        $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
+	        $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade')->onUpdate('cascade');
 	        $table->integer('provider_id')->unsigned()->nullable();
-	        $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade');
+	        $table->foreign('provider_id')->references('id')->on('providers')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

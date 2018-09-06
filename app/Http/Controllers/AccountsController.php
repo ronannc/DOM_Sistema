@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Accounts;
+use App\Parcelas;
 use Illuminate\Http\Request;
 
 class AccountsController extends Controller
@@ -31,7 +32,7 @@ class AccountsController extends Controller
 	 */
 	public function create()
 	{
-		return view('Accounts.create', ['account' => new Accounts()]);
+		return view('Accounts.create', ['account' => new Accounts(), 'parcelas' => new Parcelas()]);
 	}
 
 	/**
@@ -43,7 +44,25 @@ class AccountsController extends Controller
 	public function store(Request $request)
 	{
 		$account = $request->all();
-		Accounts::create($account);
+		$aux = Accounts::create([
+			'nome' => $account['nome'],
+			'valor'=> $account['valor'],
+			'tipo'=> $account['tipo'],
+			'client_id'=> $account['client_id'],
+			'provider_id'=> $account['provider_id'],
+			'parcelado'=> $account['parcelado'],
+			'parcelas'=> $account['parcelas'],
+			'entrada' => $account['entrada']
+		]);
+		if($account['parcelado']){
+			for($i = 1; $i <= $account['parcelas']; $i = $i + 1){
+				Parcelas::create([
+					'accounts_id' => $aux->id,
+					'valor_parcela' => $account['valor'] / $account['parcelas'],
+					'data_parcela' => now()->addMonth($i - $account['entrada']),
+				]);
+			}
+		}
 		return redirect()-> route('accounts.index');
 	}
 
