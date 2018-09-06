@@ -18,7 +18,7 @@
                     <p>Fluxo de Caixa Atual</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-bag"></i>
+                    <i class="ion ion-stats-bars"></i>
                 </div>
                 {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
             </div>
@@ -34,7 +34,7 @@
                     <p>Entrada Mes</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
+                    <i class="ion ion-arrow-graph-up-right"></i>
                 </div>
                 {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
             </div>
@@ -50,7 +50,7 @@
                     <p>Saida Mes</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-person-add"></i>
+                    <i class="ion ion-arrow-graph-down-right"></i>
                 </div>
                 {{--<a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>--}}
             </div>
