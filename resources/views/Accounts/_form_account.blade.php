@@ -42,11 +42,19 @@
     <br>
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-        <input type="text" id="client_id" name="client_id" class="form-control" placeholder="ID Cliente" value="{{old('name',$account->client_id)}}">
+        <select id="client_id" name="client_id" class="form-control">
+			<?php foreach ($clients as $client): ?>
+            <option value="{{$client->id}}">{{$client->nome}}</option>
+			<?php endforeach; ?>
+        </select>
     </div>
     <br>
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-        <input type="text" id="provider_id" name="provider_id" class="form-control" placeholder="ID Forcedor" value="{{old('name',$account->provider_id)}}">
+        <select id="provider_id" name="provider_id" class="form-control">
+	        <?php foreach ($providers as $provider): ?>
+                <option value="{{$provider->id}}">{{$provider->nome}}</option>
+            <?php endforeach; ?>
+        </select>
     </div>
 </div>

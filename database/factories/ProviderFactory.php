@@ -7,5 +7,7 @@ $factory->define(App\Providers::class, function (Faker $faker) {
 	    'nome' => $faker->name,
 	    'email' => $faker->email,
 	    'telefone' => $faker->phoneNumber,
+	    'documento' => $faker->randomNumber(['nbDigits = 11']),
+	    'endereco' => $faker->address
     ];
 });

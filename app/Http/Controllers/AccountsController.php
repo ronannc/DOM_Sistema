@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Accounts;
+use App\Clients;
 use App\Parcelas;
+use App\Providers;
 use Illuminate\Http\Request;
 
 class AccountsController extends Controller
@@ -32,7 +34,9 @@ class AccountsController extends Controller
 	 */
 	public function create()
 	{
-		return view('Accounts.create', ['account' => new Accounts(), 'parcelas' => new Parcelas()]);
+		$clients = Clients::all();
+		$providers = Providers::all();
+		return view('Accounts.create', ['account' => new Accounts(), 'parcelas' => new Parcelas(), 'clients' => $clients, 'providers'=> $providers]);
 	}
 
 	/**
