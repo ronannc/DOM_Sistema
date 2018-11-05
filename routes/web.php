@@ -33,3 +33,9 @@ Route::get('/conta/create'    , 'AccountsController@create')->name('accounts.cre
 Route::get('/conta'           , 'AccountsController@index')->name('accounts.index');
 
 Route::resource('accounts', 'AccountsController');
+
+
+Route::get('/recorte/calc'    , 'RecorteController@calc')->name('recorte.calc');
+Route::get('/recorte'           , 'RecorteController@index')->name('recorte.index');
+
+Route::resource('recorte', 'RecorteController');

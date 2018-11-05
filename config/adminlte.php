@@ -179,6 +179,7 @@ return [
         [
             'text' => 'Recorte',
             'icon' => 'cut',
+            'url'  => '/recorte'
         ],
     ],
 
