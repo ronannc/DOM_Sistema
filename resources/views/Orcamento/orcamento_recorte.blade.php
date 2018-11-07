@@ -13,7 +13,7 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <form role="form" method="post" action="{{route('recorte.calc'}}">
+        <form role="form" method="get" action="{{route('recorte.calc')}}">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                 <input type="text" id="preco_chapa" name="preco_chapa" class="form-control" placeholder="Preco Chapa" >
