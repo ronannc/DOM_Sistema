@@ -171,6 +171,7 @@ return [
         [
             'text' => 'Caixa',
             'icon' => 'cube',
+            'url' => '/caixa'
         ],
         [
             'text' => 'Pintura',

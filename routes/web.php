@@ -39,3 +39,8 @@ Route::get('/recorte/calc'    , 'RecorteController@calc')->name('recorte.calc');
 Route::get('/recorte'           , 'RecorteController@index')->name('recorte.index');
 
 Route::resource('recorte', 'RecorteController');
+
+Route::get('/caixa/calc'    , 'CaixaController@calc')->name('caixa.calc');
+Route::get('/caixa'           , 'CaixaController@index')->name('caixa.index');
+
+Route::resource('caixa', 'CaixaController');

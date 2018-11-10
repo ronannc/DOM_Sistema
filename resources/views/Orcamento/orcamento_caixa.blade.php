@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Orcamento Recorte')
+@section('title', 'Orcamento Caixa')
 
 {{--@section('content_header')--}}
 {{--<h1>Cadastrar Cliente</h1>--}}
@@ -9,11 +9,11 @@
 @section('content')
 <div class="box">
     <div class="box-header">
-      <h3 class="box-title">Orcamento Recorte</h3>
+      <h3 class="box-title">Orcamento Caixa</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <form role="form" method="post" action="{{route('recorte.calc')}}">
+        <form role="form" method="post" action="{{route('caixa.calc')}}">
             <div class="form-group">
                 <label for="preco_chapa">Preco Chapa</label>
                 <input type="text" class="form-control" id="preco_chapa" name="preco_chapa" placeholder="Preco Chapa">
@@ -31,12 +31,16 @@
                 <input type="text" class="form-control" id="indice_ganho" name="indice_ganho" placeholder="Indice Ganho">
             </div>
             <div class="form-group">
-                <label for="base_chapa_encomenda">Base Recorte Encomenda</label>
-                <input type="text" class="form-control" id="base_chapa_encomenda" name="base_chapa_encomenda" placeholder="Base Recor Encomenda">
+                <label for="base_chapa_encomenda">Base Caixa Encomenda</label>
+                <input type="text" class="form-control" id="base_chapa_encomenda" name="base_chapa_encomenda" placeholder="Base Caixa Encomenda">
             </div>
             <div class="form-group">
-                <label for="altura_chapa_encomenda">Altura Recorte Encomenda</label>
-                <input type="text" class="form-control" id="altura_chapa_encomenda" name="altura_chapa_encomenda" placeholder="Altura Recorte Encomenda">
+                <label for="altura_chapa_encomenda">Altura Caixa Encomenda</label>
+                <input type="text" class="form-control" id="altura_chapa_encomenda" name="altura_chapa_encomenda" placeholder="Altura Caixa Encomenda">
+            </div>
+            <div class="form-group">
+                <label for="largura_chapa_encomenda">Largra Caixa Emcomenda</label>
+                <input type="text"  class="form-control" id="largura_chapa_encomenda" name="largura_chapa_encomenda" placeholder="Largra Caixa Emcomenda" >
             </div>
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Calcular</button>
