@@ -48,22 +48,13 @@ class AccountsController extends Controller
 	public function store(Request $request)
 	{
 		$account = $request->all();
-		$aux = Accounts::create([
-			'nome' => $account['nome'],
-			'valor'=> $account['valor'],
-			'tipo'=> $account['tipo'],
-			'client_id'=> $account['client_id'],
-			'provider_id'=> $account['provider_id'],
-			'parcelado'=> $account['parcelado'],
-			'parcelas'=> $account['parcelas'],
-			'entrada' => $account['entrada']
-		]);
+		$aux = Accounts::create($account);
 		if($account['parcelado']){
 			for($i = 1; $i <= $account['parcelas']; $i = $i + 1){
 				Parcelas::create([
 					'accounts_id' => $aux->id,
-					'valor_parcela' => $account['valor'] / $account['parcelas'],
-					'data_parcela' => now()->addMonth($i - $account['entrada']),
+					'value_parcela' => $account['valor'] / $account['parcelas'],
+					'date_parcela' => now()->addMonth($i - $account['entrada']),
 				]);
 			}
 		}

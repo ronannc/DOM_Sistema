@@ -17,8 +17,8 @@ class CreateParcelasTable extends Migration
             $table->increments('id');
 	        $table->integer('accounts_id')->unsigned()->nullable();
 	        $table->foreign('accounts_id')->references('id')->on('accounts')->onDelete('cascade')->onUpdate('cascade');
-            $table->timestamp('data_parcela');
-            $table->double('valor_parcela');
+            $table->timestamp('date_parcela');
+            $table->double('value_parcela');
             $table->timestamps();
         });
     }

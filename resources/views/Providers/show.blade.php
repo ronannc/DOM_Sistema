@@ -6,7 +6,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Fornecedor -> {{$provider->nome}}</h3>
+            <h3 class="box-title">Fornecedor -> {{$provider->name}}</h3>
         </div>
 
         <table class="table table-bordered">
@@ -17,11 +17,11 @@
             </tr>
             <tr>
                 <th scope="row">Nome</th>
-                <td>{{$provider->nome}}</td>
+                <td>{{$provider->name}}</td>
             </tr>
             <tr>
                 <th scope="row">Telefone</th>
-                <td>{{$provider->telefone}}</td>
+                <td>{{$provider->phone}}</td>
             </tr>
             <tr>
                 <th scope="row">Email</th>

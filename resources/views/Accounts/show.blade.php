@@ -10,7 +10,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Fluxo de Caixa -> {{$account->nome}}</h3>
+            <h3 class="box-title">Fluxo de Caixa -> {{$account->name}}</h3>
         </div>
         <div class="box-body">
             <table class="table table-bordered">
@@ -21,15 +21,15 @@
                 </tr>
                 <tr>
                     <th scope="row">Nome</th>
-                    <td>{{$account->nome}}</td>
+                    <td>{{$account->name}}</td>
                 </tr>
                 <tr>
                     <th scope="row">Valor</th>
-                    <td>{{$account->valor}}</td>
+                    <td>{{$account->value}}</td>
                 </tr>
                 <tr>
                     <th scope="row">Tipo</th>
-                    <td>{{$account->tipo}}</td>
+                    <td>{{$account->type}}</td>
                 </tr>
                 {{--<tr>--}}
                     {{--<th scope="row">Endereço</th>--}}

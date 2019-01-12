@@ -4,10 +4,10 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Clients::class, function (Faker $faker) {
     return [
-	    'nome' => $faker->name,
+	    'name' => $faker->name,
 	    'email' => $faker->email,
-	    'telefone' => $faker->phoneNumber,
-	    'documento' => $faker->randomNumber(['nbDigits = 11']),
-	    'endereco' => $faker->address
+	    'phone' => $faker->phoneNumber,
+	    'doc' => $faker->randomNumber(['nbDigits = 11']),
+	    'adress' => $faker->address
     ];
 });

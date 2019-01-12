@@ -10,7 +10,7 @@
 
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Cliente -> {{$client->nome}}</h3>
+            <h3 class="box-title">Cliente -> {{$client->name}}</h3>
         </div>
 
         <table class="table table-bordered">
@@ -21,11 +21,11 @@
             </tr>
             <tr>
                 <th scope="row">Nome</th>
-                <td>{{$client->nome}}</td>
+                <td>{{$client->name}}</td>
             </tr>
             <tr>
                 <th scope="row">Telefone</th>
-                <td>{{$client->telefone}}</td>
+                <td>{{$client->phone}}</td>
             </tr>
             <tr>
                 <th scope="row">Email</th>
@@ -33,11 +33,11 @@
             </tr>
             <tr>
                 <th scope="row">Documento</th>
-                <td>{{$client->documento}}</td>
+                <td>{{$client->doc}}</td>
             </tr>
             <tr>
                 <th scope="row">Endereço</th>
-                <td>{{$client->endereco}}</td>
+                <td>{{$client->adress}}</td>
             </tr>
             </tbody>
         </table>

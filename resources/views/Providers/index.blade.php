@@ -26,9 +26,9 @@
             @foreach($providers as $provider)
                 <tr onclick="window.location='{{route('providers.show', ['provider' => $provider->id])}}'">
                     <td>{{$provider->id}}</td>
-                    <td>{{$provider->nome}}</td>
+                    <td>{{$provider->name}}</td>
                     <td>{{$provider->email}}</td>
-                    <td>{{$provider->telefone}}</td>
+                    <td>{{$provider->phone}}</td>
                     <td>
                         <a href="{{route('providers.edit',['provider' => $provider->id])}}">Editar</a>
                     </td>

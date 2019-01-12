@@ -15,9 +15,9 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nome');
-            $table->double('valor');
-            $table->boolean('tipo');
+            $table->string('name');
+            $table->double('value');
+            $table->boolean('type');
 	        $table->boolean('parcelado');
 	        $table->boolean('entrada');
 	        $table->integer('parcelas')->nullable();

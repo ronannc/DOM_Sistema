@@ -13,7 +13,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>{{$valor_fluxo}}</h3>
+                    <h3>{{$value_fluxo}}</h3>
 
                     <p>Fluxo de Caixa Atual</p>
                 </div>
@@ -29,7 +29,7 @@
             <!-- small box -->
             <div class="small-box bg-green">
                 <div class="inner">
-                    <h3>{{$valor_entrada}}</h3>
+                    <h3>{{$value_entrada}}</h3>
 
                     <p>Entrada Mes</p>
                 </div>
@@ -45,7 +45,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>{{$valor_saida}}</h3>
+                    <h3>{{$value_saida}}</h3>
 
                     <p>Saida Mes</p>
                 </div>

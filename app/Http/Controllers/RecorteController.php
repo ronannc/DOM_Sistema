@@ -13,8 +13,9 @@ class RecorteController extends Controller
 	}
 
 	public function calc(Request $request){
-        $data = $request->all();
 
+        $data = $request->all();
+//        dd($data);
         $custo = (($data['base_chapa_encomenda'] * $data['altura_chapa_encomenda']) * $data['preco_chapa']) / ($data['base_chapa'] * $data['altura_chapa']);
         $venda = $custo  * $data['indice_ganho'] ;
         return view('Orcamento.orcamento_recorte', ['custo'=>$custo, 'venda'=>$venda]);

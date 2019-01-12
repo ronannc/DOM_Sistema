@@ -25,53 +25,53 @@ class HomeController extends Controller
      */
     public function index()
     {
-	    $entradas = Accounts::where('tipo', '1')
+	    $entradas = Accounts::where('type', '1')
 		    ->where('parcelado', '0')
 		    ->whereMonth('created_at', date('m'))
 		    ->whereYear('created_at', date('Y'))
 	        ->get();
 
-	    $valor_entrada = 0;
+	    $valeu_entrada = 0;
 	    foreach ($entradas as $entrada){
-	    	$valor_entrada = $valor_entrada + $entrada->valor;
+	    	$valeu_entrada = $valeu_entrada + $entrada->value;
 	    }
 
-	    $saidas = Accounts::where('tipo', '0')
+	    $saidas = Accounts::where('type', '0')
 		    ->where('parcelado', '0')
 		    ->whereMonth('created_at', date('m'))
 		    ->whereYear('created_at', date('Y'))
 		    ->get();
 
-	    $valor_saida = 0;
+	    $valeu_saida = 0;
 	    foreach ($saidas as $saida){
-		    $valor_saida = $valor_saida + $saida->valor;
+		    $valeu_saida = $valeu_saida + $saida->value;
 	    }
 
-	    $valor_fluxo = 0;
+	    $value_fluxo = 0;
 	    $fluxos = Accounts::where('parcelado', '0')->get();
 	    foreach ($fluxos as $fluxo){
 		    if($fluxo->tipo){
-			    $valor_fluxo = $valor_fluxo + $fluxo->valor;
+			    $value_fluxo = $value_fluxo + $fluxo->value;
 		    }else{
 
-			    $valor_fluxo = $valor_fluxo - $fluxo->valor;
+			    $value_fluxo = $value_fluxo - $fluxo->value;
 		    }
 	    }
 
-	    $parcelas = Parcelas::whereMonth('data_parcela', date('m'))->get();
+	    $parcelas = Parcelas::whereMonth('date_parcela', date('m'))->get();
 //	    var_dump($parcelas);
 	    foreach ($parcelas as $parcela){
-//	    	echo $parcela->valor_parcela;
+//	    	echo $parcela->value_parcela;
 	    	$conta = Accounts::find($parcela->accounts_id);
 	    	if($conta->tipo){
-			    $valor_fluxo = $valor_fluxo + $parcela->valor_parcela;
-			    $valor_entrada = $valor_entrada + $parcela->valor_parcela;
+			    $value_fluxo = $value_fluxo + $parcela->value_parcela;
+			    $valeu_entrada = $valeu_entrada + $parcela->value_parcela;
 		    }else{
-			    $valor_fluxo = $valor_fluxo - $parcela->valor_parcela;
-			    $valor_saida = $valor_saida + $parcela->valor_parcela;
+			    $value_fluxo = $value_fluxo - $parcela->value_parcela;
+			    $valeu_saida = $valeu_saida + $parcela->value_parcela;
 		    }
 	    }
 
-	    return view('home', ['valor_fluxo' => $valor_fluxo, 'valor_entrada' => $valor_entrada, 'valor_saida' => $valor_saida]);
+	    return view('home', ['value_fluxo' => $value_fluxo, 'value_entrada' => $valeu_entrada, 'value_saida' => $valeu_saida]);
     }
 }

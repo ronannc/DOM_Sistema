@@ -31,11 +31,11 @@
             @foreach($clients as $client)
                 <tr onclick="window.location='{{route('clients.show', ['client' => $client->id])}}'">
                     <td>{{$client->id}}</td>
-                    <td>{{$client->nome}}</td>
+                    <td>{{$client->name}}</td>
                     <td>{{$client->email}}</td>
-                    <td>{{$client->telefone}}</td>
-                    <td>{{$client->documento}}</td>
-                    <td>{{$client->endereco}}</td>
+                    <td>{{$client->phone}}</td>
+                    <td>{{$client->doc}}</td>
+                    <td>{{$client->adress}}</td>
                     <td>
                         <a href="{{route('clients.edit',['client' => $client->id])}}">Editar</a>
                     </td>

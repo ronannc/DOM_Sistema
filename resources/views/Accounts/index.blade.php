@@ -30,9 +30,9 @@
             @foreach($accounts as $account)
                 <tr onclick="window.location='{{route('accounts.show', ['account' => $account->id])}}'">
                     <td>{{$account->id}}</td>
-                    <td>{{$account->nome}}</td>
-                    <td>{{$account->valor}}</td>
-                    <td>{{$account->tipo}}</td>
+                    <td>{{$account->name}}</td>
+                    <td>{{$account->value}}</td>
+                    <td>{{$account->type}}</td>
                     <td>
                         <a href="{{route('accounts.edit',['account' => $account->id])}}">Editar</a>
                     </td>

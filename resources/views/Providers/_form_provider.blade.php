@@ -1,17 +1,17 @@
 {{ csrf_field() }}
 <div class="box-body">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+    <div class="form-group">
+        <label for="email">E-mail</label>
         <input type="email" id="email" name="email" class="form-control" placeholder="Email" value="{{old('name',$provider->email)}}">
     </div>
     <br>
-    <div class="input-group">
-        <span class="input-group-addon">@</span>
-        <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome" value="{{old('name',$provider->nome)}}" required>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Nome" value="{{old('name',$provider->name)}}" required>
     </div>
     <br>
-    <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-        <input type="text" id="telefone" name="telefone" class="form-control" placeholder="Telefone" value="{{old('name',$provider->telefone)}}">
+    <div class="form-group">
+        <label for="phone">Telefone</label>
+        <input type="text" id="phone" name="phone" class="form-control" placeholder="Telefone" value="{{old('phone',$provider->phone)}}">
     </div>
 </div>

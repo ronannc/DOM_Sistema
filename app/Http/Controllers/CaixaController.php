@@ -20,7 +20,7 @@ class CaixaController extends Controller
         $w = $data['largura_chapa_encomenda'];
 
         $custo = ((($l * $w) + ($w * $h * 2) + ($l * $h * 2)) * $data['preco_chapa'] ) / ($data['base_chapa'] * $data['altura_chapa']);
-        $venda = $custo  * $data['idici_ganho'] ;
+        $venda = $custo  * $data['indice_ganho'] ;
         return view('Orcamento.orcamento_caixa', ['custo'=>$custo, 'venda'=>$venda]);
     }
 
