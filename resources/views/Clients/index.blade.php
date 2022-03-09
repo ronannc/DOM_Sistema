@@ -35,7 +35,7 @@
                     <td>{{$client->email}}</td>
                     <td>{{$client->phone}}</td>
                     <td>{{$client->doc}}</td>
-                    <td>{{$client->adress}}</td>
+                    <td>{{$client->address}}</td>
                     <td>
                         <a href="{{route('clients.edit',['client' => $client->id])}}">Editar</a>
                     </td>

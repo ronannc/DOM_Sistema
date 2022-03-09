@@ -22,6 +22,6 @@
     <br>
     <div class="form-group">
         <label for="adress">Endereco</label>
-        <input type="text" id="adress" name="adress" class="form-control" placeholder="Endereco" value="{{old('adress',$client->adress)}}">
+        <input type="text" id="address" name="address" class="form-control" placeholder="Endereco" value="{{old('address',$client->address)}}">
     </div>
 </div>

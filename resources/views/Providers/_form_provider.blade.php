@@ -14,4 +14,14 @@
         <label for="phone">Telefone</label>
         <input type="text" id="phone" name="phone" class="form-control" placeholder="Telefone" value="{{old('phone',$provider->phone)}}">
     </div>
+    <br>
+    <div class="form-group">
+        <label for="doc">Documento</label>
+        <input type="text" id="doc" name="doc" class="form-control" placeholder="Documento" value="{{old('doc',$provider->doc)}}">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="adress">Endereco</label>
+        <input type="text" id="address" name="address" class="form-control" placeholder="Endereco" value="{{old('address',$provider->address)}}">
+    </div>
 </div>

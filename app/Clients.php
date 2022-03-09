@@ -11,6 +11,6 @@ class Clients extends Model
 	use Notifiable;
 
 	protected $fillable = [
-		'name', 'email', 'phone'
+		'name', 'email', 'phone', 'doc', 'address'
 	];
 }

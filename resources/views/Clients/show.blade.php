@@ -37,7 +37,7 @@
             </tr>
             <tr>
                 <th scope="row">Endereço</th>
-                <td>{{$client->adress}}</td>
+                <td>{{$client->address}}</td>
             </tr>
             </tbody>
         </table>

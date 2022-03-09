@@ -53,7 +53,7 @@ class AccountsController extends Controller
 			for($i = 1; $i <= $account['parcelas']; $i = $i + 1){
 				Parcelas::create([
 					'accounts_id' => $aux->id,
-					'value_parcela' => $account['valor'] / $account['parcelas'],
+					'value_parcela' => $account['value'] / $account['parcelas'],
 					'date_parcela' => now()->addMonth($i - $account['entrada']),
 				]);
 			}
@@ -82,9 +82,10 @@ class AccountsController extends Controller
 	 */
 	public function edit($id)
 	{
-
 		$account = Accounts::findOrfail($id);
-		return view('Accounts.edit', compact('account'));
+        $clients = Clients::all();
+        $providers = Providers::all();
+		return view('Accounts.edit', ['account' => $account, 'clients' => $clients, 'providers'=> $providers]);
 	}
 
 	/**
