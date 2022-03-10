@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'auth/LoginController@welcome')->name('home');
+Route::get('/', 'Auth\\LoginController@welcome')->name('home');
 
 
 Auth::routes();
